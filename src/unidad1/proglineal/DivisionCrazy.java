@@ -52,17 +52,14 @@ public class DivisionCrazy {
     }
 
     public int resolver() {
-        // Realizar divisiones elemento por elemento
         for (int i = 0; i < columna1.length; i++) {
             if (columna1[i] == 0) {
-                // Si hay división por cero, se asigna un valor especial
                 division[i] = Double.POSITIVE_INFINITY;
             } else {
                 division[i] = columna2[i] / columna1[i];
             }
         }
 
-        // Encontrar el valor positivo más pequeño desde el segundo elemento
         int minIndex = -1;
         double minValue = Double.POSITIVE_INFINITY;
 
@@ -73,7 +70,6 @@ public class DivisionCrazy {
             }
         }
 
-        // Retorna el índice del valor positivo más pequeño, o -1 si no hay positivos
         return minIndex;
     }
 

@@ -12,48 +12,51 @@ package unidad1.proglineal;
 
 public class GaussR {
 
-    private double[][] A;
-    private int R;
-    private int C;
+    private double[][] a;
+    private int r;
+    private int c;
 
-    public GaussR(double[][] A, int R, int C) {
-        this.A = A;
-        this.R = R;
-        this.C = C;
+    public GaussR(double[][] a, int r, int c) {
+        this.a = a;
+        this.r = r;
+        this.c = c;
     }
 
-    public void setA(double[][] A) {
-        this.A = A;
+    public void seta(double[][] a) {
+        this.a = a;
     }
 
-    public void setR(int R) {
-        this.R = R;
+    public void setr(int r) {
+        this.r = r;
     }
 
-    public void setC(int C) {
-        this.C = C;
+    public void setc(int c) {
+        this.c = c;
     }
-
-    public void Calcular() {
-        double divisor = A[R][C];
-        for (int i = 0; i < A[R].length; i++) {
-            A[R][i] /= divisor;
-        }
-
-        for (int i = 0; i < A.length; i++) {
-            if (i != R) {
-                double factor = A[i][C];
-                for (int j = 0; j < A[i].length; j++) {
-                    A[i][j] -= factor * A[R][j];
+    
+    public void pivoting(){
+        double pivote = a[r][c];
+        for(int j = 1; j < a[0].length; j++ )
+            a[r][j] = a[r][j]/pivote; 
+        
+        for( int i = 0; i < a.length; i++)
+            
+            if(i != r){
+            double factor = -a[i][c];
+                for(int j = 0; j < a[i].length; j++){
+                    a[i][j] = a[r][j] * factor + a[i][j];
                 }
-            }
-        }
-
-        for (double[] row : A) {
-            for (double value : row) {
-                System.out.print(value + " ");
-            }
-            System.out.println();
-        }
     }
+    }
+    
+    public void print(){
+        System.out.println("A-------------------------");
+        for(int i = 0; i <a.length; i++) {
+            for(int j = 0; j < a[0].length; j++) {
+                System.out.printf("%+6.3f ", a[i][j]);
+            }
+            System.out.println("");
+        }
+    } 
+
 }
