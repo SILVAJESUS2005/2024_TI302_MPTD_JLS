@@ -34,7 +34,7 @@ public class GaussR {
         this.C = C;
     }
 
-    public void Calular() {
+    public void Calcular() {
         double divisor = A[R][C];
         for (int i = 0; i < A[R].length; i++) {
             A[R][i] /= divisor;

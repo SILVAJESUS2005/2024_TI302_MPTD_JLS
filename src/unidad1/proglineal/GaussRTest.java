@@ -26,7 +26,7 @@ public class GaussRTest {
         GaussR gauss = new GaussR(A, R, C);
        
         gauss.setA(A);
-        gauss.Calular();
+        gauss.Calcular();
 
     }
 }
