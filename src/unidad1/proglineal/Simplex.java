@@ -18,7 +18,7 @@ public class Simplex {
         this.a = a;
     }
 
-    public void resolver() {
+    public void DivisionCrazy() {
 
     }
 
