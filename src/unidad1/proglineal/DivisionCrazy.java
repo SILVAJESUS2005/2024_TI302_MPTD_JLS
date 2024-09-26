@@ -41,29 +41,46 @@ package unidad1.proglineal;
 
 public class DivisionCrazy {
 
-    private double columna1[];
-    private double columna2[];
-    private double division[];
+    private double[] columna1;
+    private double[] columna2;
+    private double[] division;
 
     public DivisionCrazy(double[] columna1, double[] columna2) {
         this.columna1 = columna1;
         this.columna2 = columna2;
-
         this.division = new double[columna1.length];
     }
 
     public int resolver() {
-        for (int i = 1; i < columna1.length; i++) {
-            division[i] = columna2[i] / columna1[i];
+        // Realizar divisiones elemento por elemento
+        for (int i = 0; i < columna1.length; i++) {
+            if (columna1[i] == 0) {
+                // Si hay división por cero, se asigna un valor especial
+                division[i] = Double.POSITIVE_INFINITY;
+            } else {
+                division[i] = columna2[i] / columna1[i];
+            }
         }
-        return 0;
 
+        // Encontrar el valor positivo más pequeño desde el segundo elemento
+        int minIndex = -1;
+        double minValue = Double.POSITIVE_INFINITY;
+
+        for (int i = 1; i < division.length; i++) {
+            if (division[i] > 0 && division[i] < minValue) {
+                minValue = division[i];
+                minIndex = i;
+            }
+        }
+
+        // Retorna el índice del valor positivo más pequeño, o -1 si no hay positivos
+        return minIndex;
     }
 
     public void print() {
         for (int i = 0; i < columna1.length; i++) {
-            System.out.println("Div " + i + ":" + division[i]);
+            System.out.println("Div " + i + ": " + division[i]);
         }
     }
-
 }
+

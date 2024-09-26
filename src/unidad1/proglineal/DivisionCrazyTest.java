@@ -41,12 +41,25 @@ package unidad1.proglineal;
 
 public class DivisionCrazyTest {
     public static void main(String ...args) {
-        double []  columna1 = {1, 2, 0, 1, -3};
-        double []  columna2 = {1, 0, -6, 8, -4};
-       
-        DivisionCrazy dc  = new DivisionCrazy(columna1, columna2);
-        dc.resolver();
-        dc.print();
+        //ENTRADA DE DATOS CASO DE PRUEBA 1
+        double[] columna1 = {1, 2, 0, 1, -3};
+        double[] columna2 = {1, 0, -6, 8, -4};
+
+        DivisionCrazy dc = new DivisionCrazy(columna1, columna2);
+        int resultado = dc.resolver();
+//        dc.print();
+
+        System.out.println(resultado);
+        
+        //ENTRADA DE DATOS CASO DE PRUEBA 2
+        double[] columna3 = {-1, 1};
+        double[] columna4 = {1, -1};
+
+        DivisionCrazy dc1 = new DivisionCrazy(columna3, columna4);
+        int resultado1 = dc1.resolver();
+
+        System.out.println(resultado1);
+        
     }
- 
 }
+
