@@ -14,9 +14,15 @@ package unidad1.proglineal;
 public class NumeroOptTest {
   
     public static void main(String ...args){
-        
+        //ENTRADA DE DATOS CASO DE PRUEBA 1
         int arr []= {1, -3, -6, 9, 0, 1, -2};
         NumeroOpt nop = new NumeroOpt(arr);
-        System.out.println("nop: " + nop.calcular());
+        System.out.println("DATOS DE PRUEBA 1: " + nop.calcular());
+        
+        //ENTRADA DE DATOS CASO DE PRUEBA 2
+        int arr1 [] = {1, 2, 3, 4};
+        NumeroOpt nop1 = new NumeroOpt(arr1);
+        System.out.println("DATOS DE PRUEBA 2:" + nop1.calcular());
+        
     }
 }
