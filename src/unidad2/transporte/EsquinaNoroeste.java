@@ -1,4 +1,4 @@
-package unidad2;
+package unidad2.transporte;
 
 public class EsquinaNoroeste {
 
@@ -48,7 +48,6 @@ public class EsquinaNoroeste {
                 j++; // aumenta j (demanda) por que al ser la menor cantidad va a ser la que quede satisfecha
 
             } else {
-                System.out.println("2");
                 D[j] = D[j] - O[i];
                 stage[i][j] = O[i];
                 O[i] = 0;
